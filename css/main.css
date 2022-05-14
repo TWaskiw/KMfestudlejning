@@ -91,7 +91,7 @@ img {
 }
 
 /* Add an active class to highlight the current page */
-.topnav a.active {
+topnav a.active {
   color: var(--orange);
 }
 
@@ -128,6 +128,16 @@ img {
   }
 }
 
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 60px);
+  background: var(--light-grey);
+  animation: fadeIn 0.4s;
+}
+
 /* ---------------------------- HERO ----------------------------------*/
 /* The hero image */
 .hero-image {
@@ -136,7 +146,7 @@ img {
     url("../img/Hero.jpg");
 
   /* Set a specific height */
-  height: 93vh;
+  height: calc(100vh - 60px);
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -249,45 +259,338 @@ img {
   text-align: start;
 }
 
-/* ---------- Footer ---------- */
-footer {
-  width: 100%;
+
+.fadoel-header {
+  margin: 40px 0;
+  font-size: 1.8em;
+}
+
+
+  /* ---------------------------- Image carousel ----------------------------------*/
+  * {box-sizing:border-box}
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: var(--orange);
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.intro-text {
+    margin: 0;
+}
+
+.intro-text h3 {
+    font-size: 1.4em;
+}
+
+.intro-text p {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.stepbystep {
+  display: grid;
+  place-items: center; /* Center the main container */
+  background: var(--white);
+  line-height: 1.5;
+  overflow: hidden;
+  height: 60vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 80%;
+  max-height: 400px;
+  height: 80%;
+  position: relative;
+  filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.4));
+}
+
+.container:before {
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  z-index: -10;
+}
+
+.content {
+  border-radius: 5px;
+  top: 70px; /* Leave space for the progress bar */
+  position: absolute; /* Place each text container on top of each other. */
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 75px 10% 75px 10%;
-  background-color: #fcfcfc;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  padding: 3em;
+  display: none; /* Hide all text containers */
+  background: var(--text-color-light);
 }
 
-footer h2 {
-  font-size: 16px;
-  color: var(--orange);
-  padding: 10px 0;
+
+.step {
+  float: left;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 25%; 
+  font-weight: bold;
 }
 
-footer p,
-footer ul {
-  font-size: 14px;
-}
-
-footer a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.left-footer,
-.middle-footer,
-.right-footer {
+/* Circles referencing each step */
+.step:after {
+  content: ''; /* Content will be assign to each circle independently */
+  position: absolute;
+  width: 35px;
+  color: var(--dark);
+  font-size: 1em;
+	height: 35px;
+  border-radius: 50%;
+  background: none;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  background: var(--white); /* Setting background so that part of the progress line is not seen */
+  transition: 0.5s ease-in-out; /* Transition for color fill */
+  border: 2px solid white;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center; /* Center text */
   justify-content: center;
-  text-align: start;
-  width: 20%;
-  padding-left: 6%;
+
 }
 
-.fa-facebook {
-  color: var(--orange);
+.step.first:after {
+  content: '1';
 }
 
-.right-footer h2 {
-  padding-bottom: 0;
+.step.second:after {
+  content: '2';
+}
+
+.step.third:after {
+  content: '3';
+}
+
+.step.fourth:after {
+  content: '4';
+}
+
+/* Progress bar, before each step circle */
+.step:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  right: 50%;
+  transform: translateY(-50%);
+  height: 7px;
+  border: 2px solid white;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease-in-out;
+}
+
+/* Hide the progress bar before the first step circle */
+.step.first:before {
+  display: none;
+}
+
+/* Each "button" */
+label {
+  background: var(--dark);
+  color: white;
+  padding: 0.5em 1.75em;
+  position: absolute;
+  right: 4em;
+  bottom: 2em;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  user-select: none; /* Just so the text can't be seleted. Not needed. */
+	 -webkit-user-select: none; /* Just so the text can't be seleted. Not needed. */
+}
+
+label:hover {
+  background: var(--orange);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  bottom: calc(2em + 2px);
+  right: calc(4em + 2px);
+}
+
+/* Hide all checkboxes. They are not needed since they can be checked with the labels. */
+input[name="toggler"] {
+  display: none;
+}
+
+/* Show the (.content) placed immediately after a checked checkbox. */
+input[name="toggler"]:checked + .content {
+	 display: flex;
+}
+
+/* Change the background and color of the step circle located right after a checked checkbox and (.content). */
+
+input[name='toggler']:checked + .content + .step:after {
+	 background: var(--orange);
+	 color: var(--white);
+   border: 2px solid var(--orange);
+}
+
+/* Change the background and color of the progress bar located right after a checked checkbox and (.content). */
+input[name='toggler']:checked + .content + .step:before {
+	 background: var(--orange);
+}
+
+/* Change color of each step circles after a NOT selected checkbox. */
+input:not(:checked) + .step {
+	 color: var(--orange);
+}
+
+/* Change the background and color of the step circle located right after a NOT checked checkbox. */
+input:not(:checked) + .step:after {
+	 border-color: var(--orange);
+	 color: var(--orange);
+}
+
+input[type="reset"] {
+  align-self: flex-end;
+  background: var(--orange);
+  color: white;
+  padding: 0.75em 2em;
+  position: absolute;
+  right: 4em;
+  bottom: 2em;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  user-select: none; /* So the text can't be seleted. Not needed. */
+	 -webkit-user-select: none; /* So the text can't be seleted. Not needed. */
+  border: none;
+  font-size: 1rem;
+}
+
+input[type="reset"]:hover {
+  background: var(--orange);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  bottom: calc(2em + 2px);
+  right: calc(4em + 2px);
+}
+
+@media (max-width: 780px) {
+  .container {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-height: 550px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    max-height: 800px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    max-height: 900px;
+  }
 }
