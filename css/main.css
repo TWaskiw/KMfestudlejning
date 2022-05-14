@@ -128,6 +128,48 @@ topnav a.active {
   }
 }
 
+/* ---------- Footer ---------- */
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 75px 10% 75px 10%;
+  background-color: #fcfcfc;
+}
+
+footer h2 {
+  font-size: 16px;
+  color: var(--orange);
+  padding: 10px 0;
+}
+
+footer p,
+footer ul {
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.left-footer,
+.middle-footer,
+.right-footer {
+  justify-content: center;
+  text-align: start;
+  width: 20%;
+  padding-left: 6%;
+}
+
+.fa-facebook {
+  color: var(--orange);
+}
+
+.right-footer h2 {
+  padding-bottom: 0;
+}
 
 /* ---------- page styling ---------- */
 .page {
