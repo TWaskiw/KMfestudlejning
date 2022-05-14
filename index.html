@@ -6,13 +6,14 @@
 <head>
   <meta charset="utf-8" />
   <title>KMFestudlejning</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Rune Lehtonen, Thomas Waskiw">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" href="img/Logo.svg">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body onhashchange="pageChange()">
   <!-- Header Section ––––––––––––––––––––––––––––––––––––––––––––––––––-->
   <header class="header">
     <div class="topnav" id="myTopnav">
@@ -21,13 +22,17 @@
       <a href="#aktiviteter">Aktiviteter</a>
       <a href="#popcorn">Popcornmaskine</a>
       <a href="#softice">Softicemaskine</a>
-      <a href="#fadølsudlejning">Fadølsudlejning</a>
+      <a href="#fadoel">Fadølsudlejning</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
   </header>
-  <main>
+
+
+  <!-- pages -->
+  <!-- Hjem page -->
+  <section id="hjem" class="page">
     <div class="hero-image">
       <div class="hero-text">
         <h1>Velkommen til <br><span>KM</span>Festudlejning</h1>
@@ -119,30 +124,120 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="left-footer">
-        <div class="address">
-          <h2>KMFestudlejning</h2>
-          <p>Østergade 17.2 th <br />6000 Kolding</p>
+    </section>
+
+    <!-- Fadølsudlejning page -->
+    <section id="fadoel" class="page">
+      <h2 class="fadoel-header">Fadølsudlejning</h2>
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="img/Banner 1.jpg" style="width:100%">
         </div>
-      </div>
-      <div class="middle-footer">
-        <h2>Kontakt</h2>
-        <div class="contact-info">
-          <p>+45 23 96 81 09<br><a href="mailto:kmfestudlejning@hotmail.com">kmfestudlejning@hotmail.com</a></p>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="img/banner 2.jpg" style="width:100%">
         </div>
-      </div>
-      <div class="right-footer">
-        <div class="find-us">
-          <h2>Følg os</h2>
-          <a href="https://www.facebook.com/KMfestudlejning-106379617817899" target="_blank"> <i
-              class="fab fa-facebook fa-2x"></i></a>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/banner 3.jpg" style="width:100%">
         </div>
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-    </footer>
-  </main>
-  <script src="js/main.js"></script>
-  <script src="js/spa.js"></script>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <div class="intro-text">
+      <h3>Lad os hjælpe med at gøre din fest lidt bedre</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+
+      <!-- Step by step -->
+<div class="stepbystep">
+  <form class="container">
+    <div class="wrapper">
+      <!-- First checkbox is checked because you want the first conatiner to be seen -->
+      <input type="checkbox" id="firstStep" name="toggler" checked>
+       <div class="content">
+        <label for="secondStep">Next</label>
+        <h1>Haner</h1>
+        <p>Scratch leg; meow for can opener to feed me the fat cat sat on the mat bat away with paws. Carefully drink from water glass and then spill it everywhere and proceed to lick the puddle fart in owners food and stretch out on bed, yet scoot butt on the rug. Pounce on unsuspecting person walk on keyboard or jump on fridge stare at the wall, play with food and get confused by dust yet i dreamt about fish yum! for where is it?</p>
+      </div>
+      <div class="step first"></div>
+     
+    </div>
+    
+    <div class="wrapper">
+       <input type="checkbox" id="secondStep" name="toggler">
+       <div class="content">
+        <label for="thirdStep">Next</label>
+        <h2>Klapbar</h2>
+        <p>Woops poop hanging from butt must get rid run run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now why can't i catch that stupid red dot murf pratt ungow ungow.</p>
+      </div>
+      <div class="step second" />
+     
+      
+    </div>
+    
+    <div class="wrapper">
+      <input type="checkbox" id="thirdStep" name="toggler" >
+      <div class="content">
+        <label for="fourthStep">Next</label>
+        <h2>Plastikkrus</h2>
+        <p>Stare at guinea pigs hunt anything, hiding behind the couch until lured out by a feathery toy, and found somthing move i bite it tail. Cats are the world demand to be let outside at once, and expect owner to wait for me as i think about it.</p>
+      </div>
+      <div class="step third" />
+     
+    </div>
+
+    <div class="wrapper">
+      <input type="checkbox" id="fourthStep" name="toggler" >
+      <div class="content">
+        <h2>Fadøl</h2>
+        <p>Stare at guinea pigs hunt anything, hiding behind the couch until lured out by a feathery toy, and found somthing move i bite it tail. Cats are the world demand to be let outside at once, and expect owner to wait for me as i think about it.</p>
+         <input type="reset">
+      </div>
+      <div class="step fourth" />
+     
+    </div>
+
+  </form>
+</div>
+    </section>
+
+    <!-- Softice page -->
+    <section id="softice" class="page">
+    </section>
+
+    <!-- Popcorn page -->
+    <section id="popcorn" class="page">
+    </section>
+
+    <!-- Aktiviteter page -->
+    <section id="aktiviteter" class="page">
+    </section>
+
+    <!-- Aktiviteter page -->
+    <section id="kontakt" class="page">
+    </section>
+
+    <!-- SPA functionality  -->
+    <script src="js/spa.js"></script>
+    <!-- main js file -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
