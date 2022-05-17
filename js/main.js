@@ -6,6 +6,12 @@ window.contactSuccess = (event) => contactSuccess(event);
 window.myFunction = () => myFunction();
 window.plusSlides = (n) => plusSlides(n);
 window.currentSlide = (n) => currentSlide(n);
+window.filterSelection = () => filterSelection();
+window.AddClass = (element, name) => AddClass(element, name);
+window.RemoveClass = (element, name) => RemoveClass(element, name);
+
+
+
 
 
 // Alle
