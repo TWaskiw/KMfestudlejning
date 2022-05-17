@@ -28,11 +28,6 @@ import {
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAVoadKWObjeSokbsPBt0l7cIta6tAvFDs",
   authDomain: "km-festudlejning.firebaseapp.com",
@@ -78,8 +73,8 @@ function filterByKeyword(keyword) {
 
   document.getElementById("filterDiv").innerHTML = filteredProducts
     .map((produkt) => {
-      return `<h1><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h1>
-      <p class="menu-text-grey">Alk. ${produkt.alcohol}% - Pilsner<span class="menu-right">${produkt.volume} l.</span></p>
+      return `<h2><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
+      <p class="menu-text-grey">Alk. ${produkt.alcohol}% - ${produkt.type}<span class="menu-right">${produkt.volume} l.</span></p>
       <hr>`;
     })
     .join("");
