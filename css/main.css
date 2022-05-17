@@ -621,6 +621,20 @@ input[type="reset"]:hover {
   padding-bottom: 0;
 }
 
+.contact-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.start-date,
+.end-date {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 45%;
+}
+
 select,
 input[type="text"],
 textarea {

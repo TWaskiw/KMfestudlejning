@@ -4,6 +4,8 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $selectOption = $_POST['klapbar'];
+    $selectOptionSdate = $_POST['startdate'];
+    $selectOptionEdate = $_POST['enddate'];
     $subject = $_POST['subject'];
 
     $email_from = 'thomaswwpedersen@gmail.com';
@@ -12,7 +14,9 @@
                   "Efternavn: $lastname\n".
                   "Email: $email\n".
                   "Besked: $subject\n".
-                  "Klapbar: $selectOption\n";
+                  "Klapbar: $selectOption\n".
+                  "Start dato: $selectOptionSdate\n".
+                  "Slut dato: $selectOptionEdate\n";
 
                   $to = "thomaswpedersen@hotmail.com";
                   $headers = "From: $email_from \r\n";

@@ -461,8 +461,19 @@
               <input type="text" id="lname" name="lastname" placeholder="Efternavn" />
             </div>
           </div>
+          <div class="contact-date">
+            <div class="start-date">
+              <label for="startdate">Start dato</label>
+              <input type="date" id="startdate" name="startdate" placeholder="Start-dato" required />
+            </div>
+            <div class="end-date">
+              <label for="startdate">Slut dato</label>
+              <input type="date" id="enddate" name="enddate" placeholder="Slut-dato" />
+            </div>
+          </div>
           <label for="klapbar">Antal klapbar</label>
           <select name="klapbar" id="klapbar">
+            <option value="0">Ingen klapbar</option>
             <option value="1">1 Klapbar</option>
             <option value="2">2 Klapbar</option>
           </select>
