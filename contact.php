@@ -16,12 +16,12 @@
                   "Efternavn: $lastname\n".
                   "Email: $email\n".
                   "Telefonnr.: $phone\n".
-                  "Besked: $subject\n".
+                  "Start dato: $selectOptionSdate\n".
+                  "Slut dato: $selectOptionEdate\n".
                   "Klapbar: $selectOption\n".
                   "Krus: $selectOptionKrus\n".
                   "Haner: $selectOptionHaner\n".
-                  "Start dato: $selectOptionSdate\n".
-                  "Slut dato: $selectOptionEdate\n";
+                  "Besked: $subject\n";
 
                   $to = "thomaswpedersen@hotmail.com";
                   $headers = "From: $email_from \r\n";
