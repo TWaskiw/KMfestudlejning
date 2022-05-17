@@ -449,17 +449,24 @@
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.</p>
     </div>
-    <hr />
     <div class="contact generel-margin">
       <div class="contact-form">
         <form method="post" action="contact.php" id="contactForm">
-          <div class="contact-name">
-            <div class="first-name">
-              <input type="text" id="fname" name="firstname" placeholder="Fornavn" required />
+          <div class="personal-info">
+            <div class="contact-name">
+              <div class="first-name">
+                <label for="fornavn">Fornavn</label>
+                <input type="text" id="fname" name="firstname" placeholder="Fornavn" required />
+              </div>
+              <div class="last-name">
+                <label for="efternavn">Efternavn</label>
+                <input type="text" id="lname" name="lastname" placeholder="Efternavn" />
+              </div>
             </div>
-            <div class="last-name">
-              <input type="text" id="lname" name="lastname" placeholder="Efternavn" />
-            </div>
+            <label for="email">Email-adresse</label>
+            <input type="text" id="email" name="email" placeholder="Email" required />
+            <label for="phone">Telefonnr.</label>
+            <input type="text" id="phone" name="phone" placeholder="Telefonnummer" required />
           </div>
           <div class="contact-date">
             <div class="start-date">
@@ -471,17 +478,32 @@
               <input type="date" id="enddate" name="enddate" placeholder="Slut-dato" />
             </div>
           </div>
-          <label for="klapbar">Antal klapbar</label>
-          <select name="klapbar" id="klapbar">
-            <option value="0">Ingen klapbar</option>
-            <option value="1">1 Klapbar</option>
-            <option value="2">2 Klapbar</option>
-          </select>
-          <input type="text" id="email" name="email" placeholder="Email" required />
-          <input type="text" id="phone" name="phone" placeholder="Telefonnummer" required />
-
-          <textarea id="subject" name="subject" placeholder="Hej.." style="height: 200px" required></textarea>
-
+          <div class="specific-information">
+            <div class="klapbar">
+              <label for="klapbar">Antal klapbar</label>
+              <select name="klapbar" id="klapbar">
+                <option value="0">Ingen</option>
+                <option value="1">1 Klapbar</option>
+                <option value="2">2 Klapbar</option>
+              </select>
+            </div>
+            <div class="krus">
+              <label for="krus">Antal krus?</label>
+              <input type="text" id="krus" name="krus" placeholder="Antal krus" required />
+            </div>
+            <div class="haner">
+              <label for="haner">Antal haner?</label>
+              <select name="haner" id="haner">
+                <option value="0">Ingen</option>
+                <option value="1">1 Hane</option>
+                <option value="2">2 Haner</option>
+              </select>
+            </div>
+          </div>
+          <div class="contact-message">
+            <label for="subject">Din besked</label>
+            <textarea id="subject" name="subject" placeholder="Hej.." style="height: 200px" required></textarea>
+          </div>
           <input type="submit" onclick="contactSuccess()" value="Send besked" id="submitButton" />
         </form>
       </div>
