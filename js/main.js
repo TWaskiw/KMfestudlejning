@@ -6,13 +6,7 @@ window.contactSuccess = (event) => contactSuccess(event);
 window.myFunction = () => myFunction();
 window.plusSlides = (n) => plusSlides(n);
 window.currentSlide = (n) => currentSlide(n);
-window.filterSelection = () => filterSelection();
-window.AddClass = (element, name) => AddClass(element, name);
-window.RemoveClass = (element, name) => RemoveClass(element, name);
-
-
-
-
+window.filterByKeyword = (keyword) => filterByKeyword(keyword);
 
 // Alle
 // Import CRUD + database
@@ -67,9 +61,31 @@ onSnapshot(_produkter, (snapshot) => {
   // Sorterer array af objects alfabetisk
   _produkter.sort((a, b) => a.name.localeCompare(b.name));
   // Append produkter ind i global variabel
-  // appendProdukter(_produkter);
+  appendProdukter(_produkter);
   console.log(_produkter);
 });
+
+function filterByKeyword(keyword) {
+  const filteredProducts = _produkter.filter((produkt) => {
+    return produkt.brand === keyword;
+  });
+  console.log(filteredProducts);
+
+  // Append de filtrerede drinks
+  // Thomas
+
+  document.getElementById("category-header").innerText = keyword;
+
+  document.getElementById("filterDiv").innerHTML = filteredProducts
+    .map((produkt) => {
+      return `<h1><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h1>
+      <p class="menu-text-grey">Alk. ${produkt.alcohol}% - Pilsner<span class="menu-right">${produkt.volume} l.</span></p>
+      <hr>`;
+    })
+    .join("");
+
+  return filteredProducts;
+}
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
