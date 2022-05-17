@@ -239,17 +239,24 @@
 
             <section id="content4" class="tab-content">
                 <h3>Fadøl</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</p>
+                              <div id="myBtnContainer">
+                <div class="button-wrapper">
+                  <button class="btn menuActive" onclick="filterByKeyword('all');return false;"> Vis alle</button>
+                  <button class="btn" onclick="filterByKeyword('royal')"> Royal</button>
+                  <button class="btn" onclick="filterByKeyword('albani')"> Albani</button>
+                  <button class="btn" onclick="filterByKeyword('ceres');return false;"> Ceres</button>
+                  <button class="btn" onclick="filterByKeyword('odense');return false;"> Odense</button>
+                  <button class="btn" onclick="filterByKeyword('thorr');return false;"> Thor</button>
+                  <button class="btn" onclick="filterByKeyword('fuglsang');return false;"> Fuglsang</button>
+                  <button class="btn" onclick="filterByKeyword('heineken');return false;"> Heineken</button>
+                  <button class="btn" onclick="filterByKeyword('edelweiss');return false;"> Edelweiss</button>
+                  <button class="btn" onclick="filterByKeyword('affligem');return false;"> Affligem</button>
+                  <button class="btn" onclick="filterByKeyword('murphys');return false;"> Murphys</button>
+                  <button class="btn" onclick="filterByKeyword('newcastle');return false;"> Newcastle</button>
+                </div>
+              </div>
+              <h3 class="category-header" id="category-header"></h3>
+              <div id="filterDiv" class="filterDiv royal"></div>
             </section>
         </div>
     </section>
