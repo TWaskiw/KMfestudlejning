@@ -526,7 +526,7 @@ footer a {
 }
 
 /* Each "button" */
-label {
+.label-menu {
   background: var(--dark);
   color: white;
   padding: 0.5em 1.75em;
@@ -540,7 +540,7 @@ label {
   -webkit-user-select: none; /* Just so the text can't be seleted. Not needed. */
 }
 
-label:hover {
+.label-menu:hover {
   background: var(--orange);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
   bottom: calc(2em + 2px);
@@ -606,6 +606,11 @@ input[type="reset"]:hover {
 }
 
 /* Kontakt side */
+#kontakt {
+  width: 50%;
+  margin: auto;
+}
+
 .kontakt-top {
   padding: 5% 20% 20% 20%;
 }
