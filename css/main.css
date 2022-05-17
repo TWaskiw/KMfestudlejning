@@ -1,6 +1,7 @@
 /* font */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
 
 :root {
   --dark: #191919;
@@ -208,7 +209,7 @@ footer a {
 }
 
 .hero-text h1 {
-  font-size: 3.5em;
+  font-size: 3em;
 }
 .hero-text span {
   font-weight: 800;
@@ -236,75 +237,158 @@ footer a {
 }
 
 /* ---------------------------- Service text ---------------------------- */
-.service-text {
-  margin: 0 15vh;
-  display: flex;
-  flex-direction: row;
-  text-align: start;
+.tilbyder-header {
+  text-align: center;
+  color: var(--orange);
+  font-family: 'playball';
+  font-weight: 500;
+  font-size: 2.5em;
+  margin: 20px auto 40px auto;
+}
+#vedligeholdelse_heading {
+  margin: 70px auto;
 }
 
-.service-text img {
-  width: 50%;
+img {
+  width: 100%;
+}
+
+.category-article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .75rem;
+  margin: .5rem;
+}
+
+.category-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.blog-post {
+  width: 100%;
+  max-width: 60rem;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  transition: .2s;
+  margin-bottom: 40px;
+}
+
+.blog-post_img {
+  min-width: 26rem;
+  max-width: 26rem;
+  height: 20rem;
+  transform: translateX(-4rem);
+  position: relative;
+}
+
+.blog-post_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 25px;
 }
+
+.blog-post_img::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: .25rem .25rem 1.5rem .5px rgba(0, 0, 0, .05);
+  border-radius: .4rem;
+}
+
+.blog-post_info {
+  text-align: left;
+}
+
+.blog-post_title {
+  font-size: 1.25rem;
+  margin: .75rem 0 1rem;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.blog-post_text {
+  margin-bottom: 1.5rem;
+  font-size: 1em;
+  color: var(--text-color-dark);
+}
+
+.blog-post_cta {
+  display: inline-block;
+  padding: 12px 14px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: .8em;
+  color: #fff;
+  background-color: var(--orange);
+  border-radius: 5px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.blog-post_cta:hover {
+  transform: translateY(-4px);
+  transition: .3s;
+}
+
+.blog-post_cta_reverse {
+  display: inline-block;
+  padding: 11px 13px;
+  border: 1px solid var(--orange);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: .8em;
+  color: var(--orange);
+  background-color: var(--white);
+  border-radius: 5px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.blog-post_cta_reverse:hover {
+  transform: translateY(-4px);
+  transition: .3s;
+}
+
+
+
+
+
+@media screen and (max-width: 1068px) {
+  .blog-post {
+      padding: 1.25rem;
+      flex-direction: column;
+  }
+
+  .blog-post_img {
+      min-width: 100%;
+      max-width: 100%;
+      transform: translate(0, -0rem);
+  }
+}
+
 
 /* ---------------------------- Offers ---------------------------- */
-.fadolsudlejning-frontpage,
-.popcornmaskine-frontpage {
-  display: flex;
-  flex-direction: row;
-  margin: 0 15vh;
-  margin-top: 10vh;
-  text-align: start;
-}
 
-.offers-frontpage h2 {
-  margin: 15vh 0 10vh 0;
-  font-size: 32px;
-}
-
-.fadolsudlejning-frontpage img,
-.softicemaskine-frontpage img,
-.popcornmaskine-frontpage img,
-.aktiviteter-frontpage img {
-  width: 50%;
-  border-radius: 25px;
-}
-
-.frontpage-text {
-  margin: auto;
-  padding: 5vw;
-  height: 100%;
-}
-
-.cta-frontpage button {
-  border: none;
-  padding: 1vh 25px;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: var(--orange);
-  color: white;
-  margin-top: 5px;
-}
-
-.cta-frontpage button .cta-frontpage button:hover {
-  color: white;
-  background: black;
-}
-
-.softicemaskine-frontpage,
-.aktiviteter-frontpage {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0 15vh;
-  margin-top: 10vh;
-  text-align: start;
-}
-
-.fadoel-header {
-  margin: 40px 0;
-  font-size: 1.8em;
-}
 
 /* ---------------------------- Image carousel ----------------------------------*/
 * {

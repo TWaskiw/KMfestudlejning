@@ -3,6 +3,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase
 
 // impoterer funktioner til modulet
 window.contactSuccess = (event) => contactSuccess(event);
+window.myFunction = () => myFunction();
+window.plusSlides = (n) => plusSlides(n);
+window.currentSlide = (n) => currentSlide(n);
+
 
 // Alle
 // Import CRUD + database
