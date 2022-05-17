@@ -11,7 +11,8 @@
     $email_body = "Fra: $firstname\n". 
                   "Efternavn: $lastname\n".
                   "Email: $email\n".
-                  "Besked: $subject\n";
+                  "Besked: $subject\n".
+                  "Klapbar: $selectOption\n";
 
                   $to = "thomaswpedersen@hotmail.com";
                   $headers = "From: $email_from \r\n";
