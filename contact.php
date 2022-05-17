@@ -2,6 +2,8 @@
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $selectOption = $_POST['klapbar'];
     $subject = $_POST['subject'];
 
     $email_from = 'thomaswwpedersen@gmail.com';
