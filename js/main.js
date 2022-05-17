@@ -1,6 +1,9 @@
 // Firebase import
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 
+// impoterer funktioner til modulet
+window.contactSuccess = (event) => contactSuccess(event);
+
 // Alle
 // Import CRUD + database
 import {
@@ -153,12 +156,15 @@ function contactSuccess(event) {
   const name = document.getElementById("fname");
   const email = document.getElementById("email");
   const message = document.getElementById("subject");
-  if (name.value !== "" && email.value !== "" && subject.value !== "") {
+  const number = document.getElementById("phone");
+  if (
+    name.value !== "" &&
+    email.value !== "" &&
+    number.value !== "" &&
+    subject.value !== ""
+  ) {
     alert(
-      "Thank you for getting in touch. I will get back to you as soon as possible!"
+      "Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!"
     );
-    /*
-    document.getElementById("submitButton").innerHTML =
-      "Success! Thank you for contacting me!"; */
   }
 }
