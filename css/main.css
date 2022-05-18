@@ -134,7 +134,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 75px 10% 75px 10%;
+  padding: 35px 10% 60px 10%;
   background-color: #fcfcfc;
 }
 
@@ -165,16 +165,31 @@ footer a {
 
 .fa-facebook {
   color: var(--orange);
+  padding-top: 8px;
 }
 
 .right-footer h2 {
   padding-bottom: 0;
 }
 
+@media screen and (max-width: 767px) {
+  /* Footer */
+  footer {
+    flex-direction: column;
+  }
+}
+
+.google-map {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  border: none;
+  margin-top: 5vh;
+}
+
 /* ---------- page styling ---------- */
 .page {
   display: none;
-  /*min heigh is screen heigh minus height of tab and top bar */
   min-height: calc(100vh - 60px);
   background: var(--light-grey);
   animation: fadeIn 0.4s;
@@ -224,7 +239,7 @@ footer a {
 
 /* ---------------------------- Intro text ----------------------------------*/
 .intro-text {
-  max-width: 1200px;
+  max-width: 1168px;
   margin:  5vh auto 5vh auto;
 }
 
@@ -233,14 +248,13 @@ footer a {
   font-family: 'playball';
   text-align: center;
   margin: 5vh auto 3vh auto;
-  margin-top: 5vh;
   color: var(--dark);
 }
 
 .intro-text p {
   margin: auto;
   text-align: left;
-  padding: 0 2.5rem;
+  padding: 0 16px;
   color: var(--text-color-dark);
 }
 
@@ -250,7 +264,7 @@ footer a {
   color: var(--text-color-dark);
   font-family: "playball";
   font-size: 2.3em;
-  margin: 20px auto 40px auto;
+  margin: 20px auto 0px auto;
 }
 #vedligeholdelse_heading {
   margin: 70px auto;
@@ -326,9 +340,9 @@ img {
 
 .blog-post_title {
   font-size: 1.25rem;
-  margin: 0.75rem 0 1rem;
+  margin: 0.5rem 0 1rem;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--dark);
 }
 
 .blog-post_text {
@@ -403,7 +417,7 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1200px;
+  max-width: 1168px;
   position: relative;
   margin: auto;
 }
@@ -496,8 +510,8 @@ span.dot.active,
 /* ---------------------------- Accordion ----------------------------------*/
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion-container {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1164px;
+  margin: 0 auto 6vh auto;
 }
 
 .accordion {
@@ -510,8 +524,11 @@ span.dot.active,
   width: 100%;
   text-align: left;
   border: none;
+  box-shadow: 10px 10px 27px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 27px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 27px -18px rgba(0,0,0,0.75);
   outline: none;
-  border-radius: 0px;
+  border-radius: 5px;
   transition: 0.4s;
 }
 
@@ -543,7 +560,7 @@ button.accordion.active:after {
 
 /* Kontakt side */
 #kontakt {
-  width: 50%;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -619,7 +636,7 @@ input[type="submit"]:hover {
 }
 
 .contact-form {
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .contact-name {
@@ -793,7 +810,7 @@ input[type="submit"]:hover {
   }
 }
 
-.fadoel-header {
+.main-header {
   margin: 5vh 0;
   font-size: 3em;
   font-family: 'playball';
@@ -840,8 +857,9 @@ input[type="submit"]:hover {
   text-align: left;
 }*/
 
-.menu-container-wrapper h1 {
-  font-size: 1.4em;
+.menu-h2 {
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
 .menu-container-wrapper p {
@@ -885,5 +903,119 @@ input[type="submit"]:hover {
 .btn.menuActive {
   background-color: var(--orange);
   color: white;
+}
+
+
+
+
+.softice-box-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 .5rem;
+  margin: 0 auto 5vh auto;
+  display: flex;
+  align-items: center;
+}
+
+.softice-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 600px;
+  padding: 0px 25px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.softice-box h3 {
+  color: var(--text-color-dark);
+  font-family: "playball";
+  font-size: 2em;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.softice-box p {
+  color: var(--text-color-dark);
+  text-align: left;
+  height: auto;
+  font-family: "Montserrat";
+}
+
+@media (max-width: 1150px) {
+  .softice-box-container {
+    flex-wrap: wrap;
+  }
+
+  .about {
+    height: auto;
+  }
+
+  .softice-box {
+    flex-grow: 1;
+    margin: 1%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.contact-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 600px;
+  padding: 20px 25px;
+  box-sizing: border-box;
+  margin: 0 30px;
+  position: relative;
+}
+
+.contact-box h3 {
+  color: var(--orange);
+  font-family: "playball";
+  font-size: 2em;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.contact-box p {
+  color: var(--text-color-dark);
+  text-align: left;
+  height: auto;
+  font-family: "Montserrat";
+}
+
+@media (max-width: 1150px) {
+  .contact-box-container {
+    flex-wrap: wrap;
+  }
+
+  .about {
+    height: auto;
+  }
+
+  .contact-box {
+    flex-grow: 1;
+    margin: 1%;
+  }
 }
 

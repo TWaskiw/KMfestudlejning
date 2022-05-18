@@ -73,7 +73,7 @@ function filterByKeyword(keyword) {
 
   document.getElementById("filterDiv").innerHTML = filteredProducts
     .map((produkt) => {
-      return `<h2><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
+      return `<h2 class="menu-h2"><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
       <p class="menu-text-grey">Alk. ${produkt.alcohol}% - ${produkt.type}<span class="menu-right">${produkt.volume} l.</span></p>
       <hr>`;
     })
