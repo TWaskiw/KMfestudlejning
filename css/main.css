@@ -651,8 +651,8 @@ input[type="submit"]:hover {
   position: relative;
 }
 
-input,
-section {
+.tab_container input,
+.tab_container section {
   clear: both;
   display: none;
 }

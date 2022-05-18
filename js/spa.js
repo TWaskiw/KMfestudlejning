@@ -32,6 +32,13 @@ function navigateTo(pageId) {
   location.href = `#${pageId}`;
 }
 
+function scrollTop() {
+  window.scroll({
+    top: 0,
+    behavior: "auto",
+  });
+}
+
 // set default page or given page by the hash url
 // function is called 'onhashchange'
 function pageChange() {
@@ -40,6 +47,7 @@ function pageChange() {
     page = location.hash.slice(1);
   }
   showPage(page);
+  scrollTop();
 }
 
 pageChange(); // called by default when the app is loaded for the first time
