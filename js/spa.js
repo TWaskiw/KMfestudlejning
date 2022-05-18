@@ -17,7 +17,7 @@ function showPage(pageId) {
 
 // sets active tabbar/ menu item
 function setActiveTab(pageId) {
-  let pages = document.querySelectorAll("topnav a");
+  let pages = document.querySelectorAll(".topnav a");
   for (let page of pages) {
     if (`#${pageId}` === page.getAttribute("href")) {
       page.classList.add("active");
