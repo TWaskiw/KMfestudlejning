@@ -240,12 +240,12 @@ footer a {
 /* ---------------------------- Intro text ----------------------------------*/
 .intro-text {
   max-width: 1168px;
-  margin:  5vh auto 5vh auto;
+  margin: 5vh auto 5vh auto;
 }
 
 .intro-text-header {
   font-size: 2.3em;
-  font-family: 'playball';
+  font-family: "playball";
   text-align: center;
   margin: 5vh auto 3vh auto;
   color: var(--dark);
@@ -501,12 +501,6 @@ span.dot.active,
   }
 }
 
-
-
-
-
-
-
 /* ---------------------------- Accordion ----------------------------------*/
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion-container {
@@ -518,15 +512,15 @@ span.dot.active,
   background-color: var(--text-color-light);
   color: var(--text-color-dark);
   font-size: 1em;
-  font-family: 'montserrat';
+  font-family: "montserrat";
   cursor: pointer;
   padding: 18px;
   width: 100%;
   text-align: left;
   border: none;
-  box-shadow: 10px 10px 27px -18px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 10px 10px 27px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 27px -18px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 27px -18px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 27px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 27px -18px rgba(0, 0, 0, 0.75);
   outline: none;
   border-radius: 5px;
   transition: 0.4s;
@@ -547,11 +541,11 @@ span.dot.active,
 }
 
 button.accordion::after {
-  content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
+  content: "\002B";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
 }
 
 button.accordion.active:after {
@@ -653,12 +647,6 @@ input[type="submit"]:hover {
 .personal-info {
   text-align: start;
 }
-
-
-
-
-
-
 
 /* ---------------------------- Tabs - Fadølsudlejning ----------------------------------*/
 .tab_container {
@@ -813,7 +801,7 @@ input[type="submit"]:hover {
 .main-header {
   margin: 5vh 0;
   font-size: 3em;
-  font-family: 'playball';
+  font-family: "playball";
 }
 
 .category-header {
@@ -905,13 +893,10 @@ input[type="submit"]:hover {
   color: white;
 }
 
-
-
-
 .ekstra-box-container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   margin: 0 auto 5vh auto;
   display: flex;
   align-items: center;
@@ -937,7 +922,7 @@ input[type="submit"]:hover {
   margin-bottom: 8px;
 }
 
-.softice-box p {
+.ekstra-box p {
   color: var(--text-color-dark);
   text-align: left;
   height: auto;
@@ -945,7 +930,7 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 1150px) {
-  .softice-box-container {
+  .ekstra-box-container {
     flex-wrap: wrap;
   }
 
@@ -953,21 +938,11 @@ input[type="submit"]:hover {
     height: auto;
   }
 
-  .softice-box {
+  .ekstra-box {
     flex-grow: 1;
     margin: 1%;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 .contact-box-container {
   width: 100%;
@@ -1019,4 +994,3 @@ input[type="submit"]:hover {
     margin: 1%;
   }
 }
-
