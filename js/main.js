@@ -7,7 +7,6 @@ window.myFunction = () => myFunction();
 window.plusSlides = (n) => plusSlides(n);
 window.currentSlide = (n) => currentSlide(n);
 window.filterByKeyword = (keyword) => filterByKeyword(keyword);
-window.filterAll = (keyword) => filterAll(keyword);
 
 // Alle
 // Import CRUD + database
@@ -15,7 +14,19 @@ import {
   getFirestore,
   collection,
   onSnapshot,
+  doc,
+  updateDoc,
+  deleteDoc,
+  addDoc,
 } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-firestore.js";
+
+// Alle
+// Import auth + login
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAVoadKWObjeSokbsPBt0l7cIta6tAvFDs",
@@ -48,21 +59,6 @@ onSnapshot(_produkter, (snapshot) => {
   appendProdukter(_produkter);
   console.log(_produkter);
 });
-
-function filterAll(keyword) {
-  const appendAllProducts = _produkter;
-
-  document.getElementById("category-header").innerText = keyword;
-  document.getElementById("filterDiv").innerHTML = appendAllProducts
-    .map((produkt) => {
-      return `<h2 class="menu-h2"><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
-      <p class="menu-text-grey">Alk. ${produkt.alcohol}% - ${produkt.type}<span class="menu-right">${produkt.volume} l.</span></p>
-      <hr>`;
-    })
-    .join("");
-
-  return appendAllProducts;
-}
 
 function filterByKeyword(keyword) {
   const filteredProducts = _produkter.filter((produkt) => {
@@ -194,11 +190,29 @@ function contactSuccess(event) {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
+  acc[i].addEventListener("click", function() {
     /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
     this.classList.toggle("active");

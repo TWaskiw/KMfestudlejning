@@ -908,7 +908,7 @@ input[type="submit"]:hover {
 
 
 
-.softice-box-container {
+.ekstra-box-container {
   width: 100%;
   max-width: 1200px;
   padding: 0 .5rem;
@@ -917,17 +917,18 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-.softice-box {
+.ekstra-box {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   width: 600px;
+  min-height: 200px;
   padding: 0px 25px;
   box-sizing: border-box;
   position: relative;
 }
 
-.softice-box h3 {
+.ekstra-box h3 {
   color: var(--text-color-dark);
   font-family: "playball";
   font-size: 2em;
