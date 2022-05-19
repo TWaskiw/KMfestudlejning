@@ -212,17 +212,17 @@ footer a {
   position: relative;
 }
 
-/* Scroll-down arrow
-********************************************************************* */
-
 /* Place text in the middle of the image */
 .hero-text {
   text-align: center;
+  color: var(--text-color-light);
+}
+
+.hero-text-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--text-color-light);
 }
 
 .hero-text h1 {
@@ -230,11 +230,92 @@ footer a {
 }
 .hero-text span {
   font-weight: 800;
-  color: var(--orange);
 }
 
 .hero-text p {
   font-size: 1.2em;
+}
+
+/* Scroll-down arrow
+********************************************************************* */
+    /* Scroll-down arrow
+********************************************************************* */
+.scroll-container {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(80vh);
+}
+
+.scroll {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--text-color-light);
+  border-radius: 50%;
+  position: relative;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+}
+.scroll:before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid var(--text-color-light);
+  border-bottom: 2px solid var(--text-color-light);
+  transform: rotate(-45deg);
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
+@-webkit-keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    height: 40px;
+  }
+  30% {
+    height: 70px;
+  }
+  60% {
+    height: 40px;
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    height: 40px;
+  }
+  30% {
+    height: 70px;
+  }
+  60% {
+    height: 40px;
+  }
 }
 
 /* ---------------------------- Intro text ----------------------------------*/

@@ -8,6 +8,7 @@ window.plusSlides = (n) => plusSlides(n);
 window.currentSlide = (n) => currentSlide(n);
 window.filterByKeyword = (keyword) => filterByKeyword(keyword);
 window.filterAll = (keyword) => filterAll(keyword);
+window.scrollDown = () => scrollDown();
 
 // Alle
 // Import CRUD + database
@@ -42,10 +43,8 @@ onSnapshot(_produkter, (snapshot) => {
     produkt.id = doc.id;
     return produkt;
   });
-  // Sorterer array af objects alfabetisk
+  // Sorterer array alfabetisk
   _produkter.sort((a, b) => a.name.localeCompare(b.name));
-  // Append produkter ind i global variabel
-  appendProdukter(_produkter);
   console.log(_produkter);
 });
 
@@ -68,13 +67,8 @@ function filterByKeyword(keyword) {
   const filteredProducts = _produkter.filter((produkt) => {
     return produkt.brand === keyword;
   });
-  console.log(filteredProducts);
-
-  // Append de filtrerede drinks
-  // Thomas
 
   document.getElementById("category-header").innerText = keyword;
-
   document.getElementById("filterDiv").innerHTML = filteredProducts
     .map((produkt) => {
       return `<h2 class="menu-h2"><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
@@ -182,15 +176,8 @@ function contactSuccess(event) {
   const email = document.getElementById("email");
   const message = document.getElementById("subject");
   const number = document.getElementById("phone");
-  if (
-    name.value !== "" &&
-    email.value !== "" &&
-    number.value !== "" &&
-    subject.value !== ""
-  ) {
-    alert(
-      "Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!"
-    );
+  if (name.value !== "" && email.value !== "" && number.value !== "" && subject.value !== "") {
+    alert("Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!");
   }
 }
 
@@ -212,3 +199,17 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+function scrollDown() {
+  /*window.scrollTo(0, -document.getElementById("fadoel-lejebetingelser").offsetHeight);*/
+  setTimeout(() => {
+    window.scrollTo(0, 800);
+  }, 10);
+}
+
+anime({
+  targets: "#km-color",
+  color: "#f9b965",
+  duration: 3000,
+  delay: 700,
+});

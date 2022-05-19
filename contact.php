@@ -10,8 +10,8 @@
     $selectOptionEdate = $_POST['enddate'];
     $subject = $_POST['subject'];
 
-    $email_from = 'thomaswwpedersen@gmail.com';
-    $email_subject = "Ny portfolio besked";
+    $email_from = 'kmfestudlejning@hotmail.com';
+    $email_subject = "Ny kontakt på KMfestudlejning.dk";
     $email_body = "Fra: $firstname\n". 
                   "Efternavn: $lastname\n".
                   "Email: $email\n".
