@@ -217,7 +217,11 @@ function scrollDown() {
 }
 
 function heroScrollDown() {
-  window.scrollTo(0, 800);
+  window.scrollTo({
+    top: 800,
+    left: 0,
+    behavior: "smooth",
+  });
 }
 
 anime({
