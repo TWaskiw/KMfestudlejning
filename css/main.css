@@ -355,7 +355,6 @@ footer a {
 /* ---------- Subheader (Hjem) ---------- */
 .tilbyder-header {
   text-align: center;
-  color: var(--orange);
   font-family: "playball";
   font-size: 2.3em;
   margin: 20px auto 0px auto;
