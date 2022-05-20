@@ -251,6 +251,7 @@ footer a {
   position: relative;
   animation: down 1.5s infinite;
   -webkit-animation: down 1.5s infinite;
+  cursor: pointer;
 }
 .scroll:before {
   content: "";
