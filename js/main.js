@@ -1,7 +1,7 @@
 // Firebase import
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 
-// impoterer funktioner til modulet
+// Impoterer funktioner til modulet
 window.contactSuccess = (event) => contactSuccess(event);
 window.myFunction = () => myFunction();
 window.plusSlides = (n) => plusSlides(n);
