@@ -9,8 +9,8 @@ window.currentSlide = (n) => currentSlide(n);
 window.filterByKeyword = (keyword) => filterByKeyword(keyword);
 window.filterAll = (keyword) => filterAll(keyword);
 window.scrollDown = () => scrollDown();
+window.heroScrollDown = () => heroScrollDown();
 
-// Alle
 // Import CRUD + database
 import {
   getFirestore,
@@ -33,11 +33,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const _db = getFirestore();
 
-// Reference til arrays i firebase database
 let _produkter = collection(_db, "produkter");
 
 onSnapshot(_produkter, (snapshot) => {
-  // Snapshot data fra firebase til objects
   _produkter = snapshot.docs.map((doc) => {
     const produkt = doc.data();
     produkt.id = doc.id;
@@ -48,6 +46,7 @@ onSnapshot(_produkter, (snapshot) => {
   console.log(_produkter);
 });
 
+// Append-funktion der viser alle produkter når "Vis alle" er valgt.
 function filterAll(keyword) {
   const appendAllProducts = _produkter;
 
@@ -63,6 +62,7 @@ function filterAll(keyword) {
   return appendAllProducts;
 }
 
+// Append-funktion der viser specifikke produkter, for det brand brugeren har trykket på.
 function filterByKeyword(keyword) {
   const filteredProducts = _produkter.filter((produkt) => {
     return produkt.brand === keyword;
@@ -80,7 +80,7 @@ function filterByKeyword(keyword) {
   return filteredProducts;
 }
 
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+// Toggler mellem at tilføje "responsive" class til topnav når brugeren trykker på ikonet.
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -201,10 +201,13 @@ for (i = 0; i < acc.length; i++) {
 }
 
 function scrollDown() {
-  /*window.scrollTo(0, -document.getElementById("fadoel-lejebetingelser").offsetHeight);*/
   setTimeout(() => {
     window.scrollTo(0, 800);
   }, 10);
+}
+
+function heroScrollDown() {
+  window.scrollTo(0, 800);
 }
 
 anime({

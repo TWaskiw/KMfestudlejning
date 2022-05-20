@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
-
+/* ---------- Root colors and font ---------- */
 :root {
   --dark: #191919;
   --white: #fff;
@@ -13,6 +13,7 @@
   --orange: #f9b965;
 }
 
+/* ---------- CSS Reset ---------- */
 *,
 *::before,
 *::after {
@@ -38,17 +39,14 @@ img {
   height: auto;
 }
 
-/* ---------------------------- NAVBAR ----------------------------------*/
-/* Add a black background color to the top navigation */
+/* ---------- Top-navigation ---------- */
 .topnav {
   background-color: var(--dark);
   margin: 0;
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
-  float: right;
   color: var(--text-color-light);
   text-align: center;
   padding: 20px 16px;
@@ -59,6 +57,10 @@ img {
   position: relative;
 }
 
+.links-right {
+  float: right;
+}
+
 .topnav a:first-child {
   float: left;
 }
@@ -67,7 +69,6 @@ img {
   font-weight: 800;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   color: var(--orange);
 }
@@ -90,29 +91,25 @@ img {
   transform-origin: bottom left;
 }
 
-/* Add an active class to highlight the current page */
 .topnav a.active {
   color: var(--orange);
 }
 
-/* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 950px) {
   .topnav a:not(:first-child) {
+    display: none;
+  }
+  .links-right a:first-child {
     display: none;
   }
   .topnav a.icon {
     float: right;
     display: block;
   }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 950px) {
   .topnav.responsive {
     position: relative;
   }
@@ -125,6 +122,9 @@ img {
     float: none;
     display: block;
     text-align: left;
+  }
+  .links-right {
+    float: none;
   }
 }
 
@@ -179,42 +179,23 @@ footer a {
   }
 }
 
-.google-map {
-  width: 100%;
-  max-width: 1200px;
-  height: 400px;
-  border: none;
-  margin-top: 5vh;
-}
-
 /* ---------- page styling ---------- */
 .page {
   display: none;
-  min-height: calc(100vh - 60px);
-  background: var(--light-grey);
-  animation: fadeIn 0.4s;
+  background: var(--white);
 }
 
-/* ---------------------------- HERO ----------------------------------*/
-/* The hero image */
+/* ---------- Hero ---------- */
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/Hero.jpg");
-
-  /* Set a specific height */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/Hero.jpg");
   height: calc(100vh - 60px);
-
-  /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-/* Place text in the middle of the image */
 .hero-text {
-  text-align: center;
   color: var(--text-color-light);
 }
 
@@ -236,13 +217,25 @@ footer a {
   font-size: 1.2em;
 }
 
-/* Scroll-down arrow
-********************************************************************* */
-    /* Scroll-down arrow
-********************************************************************* */
+@media screen and (max-width: 950px) {
+  .hero-text h1 {
+    font-size: 2.3em;
+  }
+
+  .hero-text p {
+    font-size: 1.1em;
+  }
+}
+
+/* ---------- Scroll down arrow ---------- */
+.page {
+  display: none;
+  min-height: calc(100vh - 60px);
+  background: var(--light-grey);
+  animation: fadeIn 0.4s;
+}
 .scroll-container {
   width: 100%;
-  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,10 +311,19 @@ footer a {
   }
 }
 
-/* ---------------------------- Intro text ----------------------------------*/
+.google-map {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  border: none;
+  margin-top: 5vh;
+}
+
+/* ---------- Text under Hero (Hjem) & under imageslider (fadølsudlejning) ---------- */
 .intro-text {
   max-width: 1168px;
-  margin: 5vh auto 5vh auto;
+  margin: 5vh auto;
+  padding: 0 4%;
 }
 
 .intro-text-header {
@@ -339,18 +341,16 @@ footer a {
   color: var(--text-color-dark);
 }
 
-/* ---------------------------- Service text ---------------------------- */
+/* ---------- Subheader (Hjem) ---------- */
 .tilbyder-header {
   text-align: center;
-  color: var(--text-color-dark);
+  color: var(--orange);
   font-family: "playball";
   font-size: 2.3em;
   margin: 20px auto 0px auto;
 }
-#vedligeholdelse_heading {
-  margin: 70px auto;
-}
 
+/* ---------- Card styling ---------- */
 img {
   width: 100%;
 }
@@ -361,8 +361,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.75rem;
-  margin: 0.5rem;
+  padding: 0 2%;
 }
 
 .category-wrapper {
@@ -491,24 +490,24 @@ img {
   }
 }
 
-/* ---------------------------- Image carousel ----------------------------------*/
-* {
-  box-sizing: border-box;
+/* ---------- Main header ---------- */
+.main-header {
+  margin: 5vh 0;
+  font-size: 3em;
+  font-family: "playball";
 }
 
-/* Slideshow container */
+/* ---------- Image slider ---------- */
 .slideshow-container {
   max-width: 1168px;
   position: relative;
   margin: auto;
 }
 
-/* Hide the images by default */
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -525,7 +524,6 @@ img {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -535,13 +533,11 @@ img {
   left: 0;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -550,7 +546,6 @@ img {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 12px;
@@ -567,7 +562,6 @@ span.dot.active,
   background-color: var(--orange);
 }
 
-/* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -582,8 +576,7 @@ span.dot.active,
   }
 }
 
-/* ---------------------------- Accordion ----------------------------------*/
-/* Style the buttons that are used to open and close the accordion panel */
+/* ---------- Lejebetingelser - Accordion ---------- */
 .accordion-container {
   max-width: 1164px;
   margin: 0 auto 6vh auto;
@@ -604,10 +597,13 @@ span.dot.active,
   -moz-box-shadow: 10px 10px 27px -18px rgba(0, 0, 0, 0.75);
   outline: none;
   border-radius: 5px;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+.accordion:hover {
+  background-color: #ddd;
+}
+
 .panel {
   padding: 0 18px;
   background-color: white;
@@ -623,7 +619,6 @@ span.dot.active,
 
 button.accordion::after {
   content: "\002B";
-  color: #777;
   font-weight: bold;
   float: right;
   margin-left: 5px;
@@ -633,7 +628,357 @@ button.accordion.active:after {
   content: "\2212";
 }
 
-/* Kontakt side */
+/* ---------- Step by step tabs (fadølsudlejning) ---------- */
+.tab_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tab_container input,
+.tab_container section {
+  clear: both;
+  display: none;
+}
+
+.tab-label {
+  font-weight: 500;
+  font-size: 1em;
+  display: block;
+  float: left;
+  width: 25%;
+  padding: 1.5em 1em;
+  color: var(--text-color-dark);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: #f0f0f0;
+  transition: 0.3s;
+}
+.tab-label:hover {
+  background: #ddd;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  -webkit-animation: fadeInScale 0.7s ease-in-out;
+  -moz-animation: fadeInScale 0.7s ease-in-out;
+  animation: fadeInScale 0.7s ease-in-out;
+}
+.tab_container .tab-content h3 {
+  text-align: center;
+}
+
+.tab_container [id^="tab"]:checked + .tab-label {
+  background: var(--white);
+  box-shadow: inset 0 3px var(--orange);
+}
+
+.tab_container [id^="tab"]:checked + .tab-label .fa {
+  color: var(--orange);
+}
+
+@media only screen and (max-width: 900px) {
+  .tab_container {
+    width: 100%;
+  }
+
+  .left-footer,
+  .middle-footer,
+  .right-footer {
+    justify-content: center;
+    text-align: start;
+    width: 100%;
+    padding-left: 6%;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ---------- Step 1, Haner ---------- */
+.haner-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.haner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 400px;
+  padding: 20px 25px;
+  height: auto;
+  box-sizing: border-box;
+  margin: 0 30px;
+  position: relative;
+  background-color: #f1f1f1;
+}
+
+.haner-box i {
+  height: 75px;
+  font-size: 5rem;
+}
+
+.haner-box h3 {
+  color: var(--text-color-dark);
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: "Montserrat";
+}
+
+.haner-box p {
+  color: var(--text-color-dark);
+  text-align: left;
+  height: auto;
+  font-family: "Montserrat";
+}
+
+.prisliste {
+  text-align: left;
+}
+
+.haner-box i {
+  color: var(--orange);
+  font-size: 3.5rem;
+  padding: 10px;
+}
+
+@media (max-width: 1150px) {
+  .haner-box-container {
+    flex-wrap: wrap;
+  }
+
+  .haner {
+    height: auto;
+  }
+
+  .haner-box {
+    flex-grow: 1;
+    margin: 1%;
+  }
+}
+
+/* ---------- Step 4, Fadøl ---------- */
+.menu-container {
+  background-color: var(--dark);
+  color: var(--text-color-light);
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 0px 32px 50px 32px;
+}
+
+.menu-center {
+  padding-top: 50px;
+}
+
+.menu-row a {
+  background-color: var(--orange);
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 16px 31px;
+  text-decoration: none;
+}
+
+.menu-right {
+  float: right;
+}
+
+.category-header {
+  font-family: "Yellowtail";
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--orange);
+  margin-top: 30px;
+}
+
+.menu-h2 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.menu-container-wrapper p {
+  color: var(--orange);
+  font-size: 0.85em;
+}
+
+.filterDiv {
+  text-align: left;
+  display: none; 
+}
+
+.show {
+  display: block;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 20px 20px;
+  background-color: var(--text-color-light);
+  cursor: pointer;
+  font-family: "montserrat";
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.menuActive {
+  background-color: var(--orange);
+  color: white;
+}
+
+.ekstra-box-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 0.5rem;
+  margin: 0 auto 5vh auto;
+  display: flex;
+  align-items: center;
+}
+
+.ekstra-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 600px;
+  min-height: 200px;
+  padding: 0px 25px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ekstra-box h3 {
+  color: var(--text-color-dark);
+  font-family: "playball";
+  font-size: 2em;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.ekstra-box p {
+  color: var(--text-color-dark);
+  text-align: left;
+  height: auto;
+  font-family: "Montserrat";
+}
+
+@media (max-width: 1150px) {
+  .ekstra-box-container {
+    flex-wrap: wrap;
+  }
+
+  .haner {
+    height: auto;
+  }
+
+  .ekstra-box {
+    flex-grow: 1;
+    margin: 1%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-h2 {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+}
+
+/* ---------- Contact-info ---------- */
+.contact-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 600px;
+  padding: 20px 25px;
+  box-sizing: border-box;
+  margin: 0 30px;
+  position: relative;
+}
+
+.contact-box h3 {
+  color: var(--orange);
+  font-family: "playball";
+  font-size: 2em;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.contact-box p {
+  color: var(--text-color-dark);
+  text-align: left;
+  height: auto;
+  font-family: "Montserrat";
+}
+
+@media (max-width: 1150px) {
+  .contact-box-container {
+    flex-wrap: wrap;
+  }
+
+  .haner {
+    height: auto;
+  }
+
+  .contact-box {
+    flex-grow: 1;
+    margin: 1%;
+  }
+}
+
+/* ---------- Contact-form ---------- */
 #kontakt {
   max-width: 1200px;
   margin: auto;
@@ -727,351 +1072,4 @@ input[type="submit"]:hover {
 
 .personal-info {
   text-align: start;
-}
-
-/* ---------------------------- Tabs - Fadølsudlejning ----------------------------------*/
-.tab_container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.tab_container input,
-.tab_container section {
-  clear: both;
-  display: none;
-}
-
-.tab-label {
-  font-weight: 500;
-  font-size: 1em;
-  display: block;
-  float: left;
-  width: 25%;
-  padding: 1.5em;
-  color: #757575;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  background: #f0f0f0;
-}
-
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
-  display: block;
-  padding: 20px;
-  background: #fff;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.tab_container .tab-content p,
-.tab_container .tab-content h3 {
-  -webkit-animation: fadeInScale 0.7s ease-in-out;
-  -moz-animation: fadeInScale 0.7s ease-in-out;
-  animation: fadeInScale 0.7s ease-in-out;
-}
-.tab_container .tab-content h3 {
-  text-align: center;
-}
-
-.tab_container [id^="tab"]:checked + .tab-label {
-  background: var(--white);
-  box-shadow: inset 0 3px var(--orange);
-}
-
-.tab_container [id^="tab"]:checked + .tab-label .fa {
-  color: var(--orange);
-}
-
-.tab-label .fa {
-  font-size: 1.3em;
-  margin: 0 0.4em 0 0;
-}
-
-/*Media query*/
-@media only screen and (max-width: 900px) {
-  .tab_container {
-    width: 100%;
-  }
-}
-
-/*Content Animation*/
-@keyframes fadeInScale {
-  0% {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.about-box-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  width: 400px;
-  padding: 20px 25px;
-  height: auto;
-  box-sizing: border-box;
-  margin: 0 30px;
-  position: relative;
-  background-color: #f1f1f1;
-}
-
-.about-box i {
-  height: 75px;
-  font-size: 5rem;
-}
-
-.about-box h3 {
-  color: var(--text-color-dark);
-  font-size: 1.3em;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  text-align: center;
-  font-family: "Montserrat";
-}
-
-.about-box p {
-  color: var(--text-color-dark);
-  text-align: left;
-  height: auto;
-  font-family: "Montserrat";
-}
-
-.prisliste {
-  text-align: left;
-}
-
-.about-box i {
-  color: var(--orange);
-  font-size: 3.5rem;
-  padding: 10px;
-}
-
-@media (max-width: 1150px) {
-  .about-box-container {
-    flex-wrap: wrap;
-  }
-
-  .about {
-    height: auto;
-  }
-
-  .about-box {
-    flex-grow: 1;
-    margin: 1%;
-  }
-}
-
-.main-header {
-  margin: 5vh 0;
-  font-size: 3em;
-  font-family: "playball";
-}
-
-.category-header {
-  font-family: "Yellowtail";
-  font-size: 2em;
-  font-weight: 500;
-  color: var(--orange);
-  margin-top: 30px;
-}
-
-/* MENU */
-.menu-container {
-  background-color: var(--dark);
-  color: var(--text-color-light);
-  max-width: 80vw;
-  margin: 0 auto;
-  padding: 0px 32px 50px 32px;
-}
-
-.menu-center {
-  padding-top: 50px;
-}
-
-.menu-row a {
-  background-color: var(--orange);
-  border-radius: 5px;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 1em;
-  padding: 16px 31px;
-  text-decoration: none;
-}
-
-.menu-right {
-  float: right;
-}
-
-/*.menu-container-wrapper {
-  text-align: left;
-}*/
-
-.menu-h2 {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-.menu-container-wrapper p {
-  color: var(--orange);
-  font-size: 0.85em;
-}
-
-.filterDiv {
-  text-align: left;
-  display: none; /* Hidden by default */
-}
-
-.show {
-  display: block;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 20px 20px;
-  background-color: var(--text-color-light);
-  cursor: pointer;
-  font-family: "montserrat";
-  font-weight: 500;
-}
-
-.button-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
-}
-
-/* Add a light grey background on mouse-over */
-.btn:hover {
-  background-color: #ddd;
-}
-
-/* Add a dark background to the active button */
-.btn.menuActive {
-  background-color: var(--orange);
-  color: white;
-}
-
-.ekstra-box-container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 0.5rem;
-  margin: 0 auto 5vh auto;
-  display: flex;
-  align-items: center;
-}
-
-.ekstra-box {
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  width: 600px;
-  min-height: 200px;
-  padding: 0px 25px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.ekstra-box h3 {
-  color: var(--text-color-dark);
-  font-family: "playball";
-  font-size: 2em;
-  text-align: left;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.ekstra-box p {
-  color: var(--text-color-dark);
-  text-align: left;
-  height: auto;
-  font-family: "Montserrat";
-}
-
-@media (max-width: 1150px) {
-  .ekstra-box-container {
-    flex-wrap: wrap;
-  }
-
-  .about {
-    height: auto;
-  }
-
-  .ekstra-box {
-    flex-grow: 1;
-    margin: 1%;
-  }
-}
-
-.contact-box-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-}
-
-.contact-box {
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  width: 600px;
-  padding: 20px 25px;
-  box-sizing: border-box;
-  margin: 0 30px;
-  position: relative;
-}
-
-.contact-box h3 {
-  color: var(--orange);
-  font-family: "playball";
-  font-size: 2em;
-  text-align: left;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.contact-box p {
-  color: var(--text-color-dark);
-  text-align: left;
-  height: auto;
-  font-family: "Montserrat";
-}
-
-@media (max-width: 1150px) {
-  .contact-box-container {
-    flex-wrap: wrap;
-  }
-
-  .about {
-    height: auto;
-  }
-
-  .contact-box {
-    flex-grow: 1;
-    margin: 1%;
-  }
 }

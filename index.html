@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!--Alle har været med til at skrive HTML-->
-
+<html lang="da">
   <head>
     <meta charset="utf-8" />
     <title>KMFestudlejning</title>
@@ -28,14 +26,16 @@
     <header class="header">
       <div class="topnav" id="myTopnav">
         <a href="#hjem"><span>KM</span>Festudlejning</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="#aktiviteter">Aktiviteter</a>
-        <a href="#popcorn">Popcornmaskine</a>
-        <a href="#softice">Softicemaskine</a>
-        <a href="#fadoel">Fadølsudlejning</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
+        <div class="links-right">
+          <a href="#fadoel">Fadølsudlejning</a>
+          <a href="#softice">Softicemaskine</a>
+          <a href="#popcorn">Popcornmaskine</a>
+          <a href="#aktiviteter">Aktiviteter</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -49,7 +49,7 @@
             <p>- Din lokale udlejer af festartikler i Kolding og omegn</p>
           </div>
         </div>
-        <div class="scroll-container" onclick="scrollDown()">
+        <div class="scroll-container" onclick="heroScrollDown()">
           <div class="scroll"></div>
         </div>
       </div>
@@ -196,17 +196,17 @@
         <!-- Slideshow images -->
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-          <img src="img/Banner 1.jpg" style="width: 100%" />
+          <img src="img/Banner1.jpg" alt="Billede af to forskellige øl" style="width: 100%" />
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="img/banner 2.jpg" style="width: 100%" />
+          <img src="img/banner2.jpg" alt="billede af fadøl der hældes op" style="width: 100%" />
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <img src="img/banner 3.jpg" style="width: 100%" />
+          <img src="img/banner3.jpg" alt="Billede af fodbold i tv og øl" style="width: 100%" />
         </div>
 
         <!-- Slideshow next and previous button -->
@@ -330,8 +330,8 @@
         >
         <!-- Tab - 1. Haner -->
         <section id="content1" class="tab-content">
-          <div class="about-box-container">
-            <div class="about-box" id="box1">
+          <div class="haner-box-container">
+            <div class="haner-box" id="box1">
               <i class="fas fa-faucet-drip"></i>
               <h3>1 Hane</h3>
               <p>
@@ -345,7 +345,7 @@
               </p>
             </div>
 
-            <div class="about-box" id="box2">
+            <div class="haner-box" id="box2">
               <span><i class="fas fa-faucet-drip"></i><i class="fas fa-faucet-drip"></i></span>
               <h3>2 Haner</h3>
               <p>
@@ -671,7 +671,7 @@
       <!-- Lejebetingelser aktiviteter -->
       <div
         class="accordion-container"
-        id="softice-lejebetingelser"
+        id="aktiviteter-lejebetingelser"
         data-aos="fade-up"
         data-aos-duration="800"
       >
@@ -742,11 +742,11 @@
             <div class="personal-info">
               <div class="contact-name">
                 <div class="first-name">
-                  <label for="fornavn">Fornavn</label>
+                  <label for="fname">Fornavn</label>
                   <input type="text" id="fname" name="firstname" placeholder="Fornavn" required />
                 </div>
                 <div class="last-name">
-                  <label for="efternavn">Efternavn</label>
+                  <label for="lname">Efternavn</label>
                   <input type="text" id="lname" name="lastname" placeholder="Efternavn" />
                 </div>
               </div>
@@ -758,11 +758,11 @@
             <div class="contact-date">
               <div class="start-date">
                 <label for="startdate">Start dato</label>
-                <input type="date" id="startdate" name="startdate" placeholder="Start-dato" />
+                <input type="date" id="startdate" name="startdate" />
               </div>
               <div class="end-date">
                 <label for="startdate">Slut dato</label>
-                <input type="date" id="enddate" name="enddate" placeholder="Slut-dato" />
+                <input type="date" id="enddate" name="enddate" />
               </div>
             </div>
             <div class="specific-information">
