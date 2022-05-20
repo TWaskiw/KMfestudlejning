@@ -208,7 +208,11 @@ for (i = 0; i < acc.length; i++) {
 
 function scrollDown() {
   setTimeout(() => {
-    window.scrollTo(0, 800);
+    window.scrollTo({
+      top: 800,
+      left: 0,
+      behavior: "smooth",
+    });
   }, 10);
 }
 
