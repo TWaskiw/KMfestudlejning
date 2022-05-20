@@ -187,7 +187,8 @@ footer a {
 
 /* ---------- Hero ---------- */
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/Hero.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/Hero.jpg");
   height: calc(100vh - 60px);
   background-position: center;
   background-repeat: no-repeat;
@@ -339,6 +340,15 @@ footer a {
   text-align: left;
   padding: 0 16px;
   color: var(--text-color-dark);
+}
+
+.arrangere-h3 {
+  margin-top: 15vh;
+}
+
+.produkter-gennemgang-intro p {
+  padding: 0 5%;
+  margin-bottom: 2vh;
 }
 
 /* ---------- Subheader (Hjem) ---------- */
@@ -632,7 +642,7 @@ button.accordion.active:after {
 .tab_container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 5vh auto;
   position: relative;
 }
 
@@ -667,7 +677,6 @@ button.accordion.active:after {
   display: block;
   padding: 20px;
   background: #fff;
-  border-bottom: 2px solid #f0f0f0;
 }
 
 .tab_container .tab-content p,
@@ -814,7 +823,7 @@ button.accordion.active:after {
   float: right;
 }
 
-.category-header {
+.brand-header {
   font-family: "Yellowtail";
   font-size: 2em;
   font-weight: 500;
@@ -834,7 +843,7 @@ button.accordion.active:after {
 
 .filterDiv {
   text-align: left;
-  display: none; 
+  display: none;
 }
 
 .show {

@@ -11,7 +11,7 @@ window.filterAll = (keyword) => filterAll(keyword);
 window.scrollDown = () => scrollDown();
 window.heroScrollDown = () => heroScrollDown();
 
-// Import CRUD + database
+// Importér database + CRUS
 import {
   getFirestore,
   collection,
@@ -41,7 +41,6 @@ onSnapshot(_produkter, (snapshot) => {
     produkt.id = doc.id;
     return produkt;
   });
-  // Sorterer array alfabetisk
   _produkter.sort((a, b) => a.name.localeCompare(b.name));
   console.log(_produkter);
 });
@@ -50,7 +49,7 @@ onSnapshot(_produkter, (snapshot) => {
 function filterAll(keyword) {
   const appendAllProducts = _produkter;
 
-  document.getElementById("category-header").innerText = keyword;
+  document.getElementById("brand-header").innerText = keyword;
   document.getElementById("filterDiv").innerHTML = appendAllProducts
     .map((produkt) => {
       return `<h2 class="menu-h2"><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
@@ -68,7 +67,7 @@ function filterByKeyword(keyword) {
     return produkt.brand === keyword;
   });
 
-  document.getElementById("category-header").innerText = keyword;
+  document.getElementById("brand-header").innerText = keyword;
   document.getElementById("filterDiv").innerHTML = filteredProducts
     .map((produkt) => {
       return `<h2 class="menu-h2"><b>${produkt.name}</b> <span class="menu-right">${produkt.price} kr,-</span></h2>
@@ -176,8 +175,15 @@ function contactSuccess(event) {
   const email = document.getElementById("email");
   const message = document.getElementById("subject");
   const number = document.getElementById("phone");
-  if (name.value !== "" && email.value !== "" && number.value !== "" && subject.value !== "") {
-    alert("Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!");
+  if (
+    name.value !== "" &&
+    email.value !== "" &&
+    number.value !== "" &&
+    subject.value !== ""
+  ) {
+    alert(
+      "Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!"
+    );
   }
 }
 
