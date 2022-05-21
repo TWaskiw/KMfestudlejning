@@ -1,9 +1,9 @@
 // Firebase import
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 
-// Impoterer funktioner til modulet
+// impoterer funktioner til modulet
 window.contactSuccess = (event) => contactSuccess(event);
-window.myFunction = () => myFunction();
+window.mobileNav = () => mobileNav();
 window.plusSlides = (n) => plusSlides(n);
 window.currentSlide = (n) => currentSlide(n);
 window.filterByKeyword = (keyword) => filterByKeyword(keyword);
@@ -80,7 +80,7 @@ function filterByKeyword(keyword) {
 }
 
 // Toggler mellem at tilføje "responsive" class til topnav når brugeren trykker på ikonet.
-function myFunction() {
+function mobileNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";

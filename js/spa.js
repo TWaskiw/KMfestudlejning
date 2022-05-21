@@ -27,10 +27,10 @@ function setActiveTab(pageId) {
   }
 }
 
-// navigate to a new view/page by changing href
+/*// navigate to a new view/page by changing href
 function navigateTo(pageId) {
   location.href = `#${pageId}`;
-}
+}*/
 
 function scrollTop() {
   window.scroll({
