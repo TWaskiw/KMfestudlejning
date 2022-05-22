@@ -179,10 +179,10 @@ function contactSuccess(event) {
     name.value !== "" &&
     email.value !== "" &&
     number.value !== "" &&
-    subject.value !== ""
+    message.value !== ""
   ) {
     alert(
-      "Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!"
+      "Tak for din interesse i KMfestudlejning, vi vender tilbage til dig hurtigst muligt!"
     );
   }
 }

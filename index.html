@@ -698,7 +698,7 @@
           <div class="personal-info">
             <div class="contact-name">
               <div class="first-name">
-                <label for="fname">Fornavn</label>
+                <label for="fname">Fornavn *</label>
                 <input type="text" id="fname" name="firstname" placeholder="Fornavn" required />
               </div>
               <div class="last-name">
@@ -706,9 +706,9 @@
                 <input type="text" id="lname" name="lastname" placeholder="Efternavn" />
               </div>
             </div>
-            <label for="email">Email-adresse</label>
+            <label for="email">Email-adresse *</label>
             <input type="text" id="email" name="email" placeholder="Email" required />
-            <label for="phone">Telefonnr.</label>
+            <label for="phone">Telefonnr. *</label>
             <input type="text" id="phone" name="phone" placeholder="Telefonnummer" required />
           </div>
           <div class="contact-date">
@@ -743,11 +743,11 @@
             </div>
           </div>
           <div class="contact-message">
-            <label for="subject">Din besked</label>
+            <label for="subject">Din besked *</label>
             <textarea id="subject" name="subject" placeholder="Skriv din besked her." style="height: 200px"
               required></textarea>
           </div>
-          <input type="submit" onclick="contactSuccess()" value="Send besked" id="submitButton" />
+          <input type="submit" onclick="contactSuccess()" value="Send besked" />
         </form>
       </div>
     </div>
