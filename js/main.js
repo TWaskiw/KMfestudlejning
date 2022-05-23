@@ -179,10 +179,10 @@ function contactSuccess(event) {
     name.value !== "" &&
     email.value !== "" &&
     number.value !== "" &&
-    message.value !== ""
+    subject.value !== ""
   ) {
     alert(
-      "Tak for din interesse i KMfestudlejning, vi vender tilbage til dig hurtigst muligt!"
+      "Tak for din interesse i KM festudlejning, vi vender tilbage til dig hurtigst muligt!"
     );
   }
 }
@@ -226,7 +226,7 @@ function heroScrollDown() {
 
 anime({
   targets: "#km-color",
-  color: "#f9b965",
+  color: "#edc074",
   duration: 3000,
   delay: 700,
 });

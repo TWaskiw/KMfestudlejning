@@ -4,13 +4,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
 /* ---------- Root colors and font ---------- */
 :root {
-  --dark: #191919;
+  --dark: #653118;
   --white: #fff;
   --text-color-light: #f1f1f1;
   --text-color-dark: #191919;
   --font-family: "Montserrat", sans-serif;
   --font-family-header: "Playball", sans-serif;
-  --orange: #f9b965;
+  --orange: #edc074;
 }
 
 /* ---------- CSS Reset ---------- */
@@ -41,7 +41,7 @@ img {
 
 /* ---------- Top-navigation ---------- */
 .topnav {
-  background-color: var(--dark);
+  background-color: var(--text-color-dark);
   margin: 0;
   overflow: hidden;
 }
@@ -356,6 +356,7 @@ footer a {
 .tilbyder-header {
   text-align: center;
   font-family: "playball";
+  color: var(--dark);
   font-size: 2.3em;
   margin: 20px auto 0px auto;
 }
@@ -432,7 +433,7 @@ img {
   font-size: 1.25rem;
   margin: 0.5rem 0 1rem;
   text-transform: uppercase;
-  color: var(--dark);
+  color: var(--orange);
 }
 
 .blog-post_text {
@@ -504,6 +505,7 @@ img {
 .main-header {
   margin: 5vh 0;
   font-size: 3em;
+  color: var(--dark);
   font-family: "playball";
 }
 
@@ -827,7 +829,7 @@ button.accordion.active:after {
   font-family: "Yellowtail";
   font-size: 2em;
   font-weight: 500;
-  color: var(--orange);
+  color: var(--dark);
   margin-top: 30px;
 }
 
@@ -898,7 +900,7 @@ button.accordion.active:after {
 }
 
 .ekstra-box h3 {
-  color: var(--text-color-dark);
+  color: var(--dark);
   font-family: "playball";
   font-size: 2em;
   text-align: left;
@@ -957,7 +959,7 @@ button.accordion.active:after {
 }
 
 .contact-box h3 {
-  color: var(--orange);
+  color: var(--dark);
   font-family: "playball";
   font-size: 2em;
   text-align: left;
@@ -1056,6 +1058,7 @@ input[type="submit"] {
   cursor: pointer;
   border: 1px solid white;
   border-radius: 5px;
+  transition: .3s;
 }
 
 input[type="submit"]:hover {
